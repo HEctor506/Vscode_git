@@ -1,8 +1,8 @@
 
-par(X) :- X mod 2 =:= 0. #Predicado que prueba si un numero es par
+par(X) :- X mod 2 =:= 0. % Predicado que prueba si un numero es par
 
 
-# "Predicado que prueba si un numero es primo "
+% Predicado que prueba si un numero es primo 
 primo(X) :-
     X > 1,
     not((between(2, X1, Y), X1 is X - 1, X mod Y =:= 0)).
@@ -12,22 +12,22 @@ tiene(juan, coche).
 tiene(pedro, patineta). 
 
 
-#OPERADORES ARITMETICOS
+% OPERADORES ARITMETICOS
 
-#EJEMPLO 1
+% EJEMPLO 1
 cuadrado(X,R) :- R is X*X.
 
-#EJEMPLO 2
+% EJEMPLO 2
 media(A,B,M) :- M is (A+B)/2. 
 
-#EJEMPLO 3
+% EJEMPLO 3
 factorial(0,1).
 factorial(N,R):-
         N1 is N-1,
         factorial(N1, R1),
         R is N*R1.
 
-#EJEMPLO 4
+% EJEMPLO 4
 % Casos base
 fibonacci(0, 1).  % Definimos el primer número Fibonacci como 0 (si seguimos la convención estándar)
 fibonacci(1, 1).  % El segundo número Fibonacci es 1
@@ -42,8 +42,19 @@ fibonacci(N, R) :-
                     % Calculamos el número Fibonacci sumando los dos anteriores
 
 
-#EJEMPLO 5
+% EJEMPLO 5
 mcd(X,0,X).
 mcd(X,Y,M):-
         X1 is X mod Y,
         mcd(Y,X1,M).
+
+% EJEMPLO 6
+poblacion('Francia', 60000000).
+poblacion('España', 45000000).
+area('Francia', 640000).
+area('España', 505000).
+densidad(Pais, D):-
+            poblacion(Pais, P),
+            area(Pais, A),
+            D is P/A.
+
