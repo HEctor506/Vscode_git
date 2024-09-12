@@ -32,3 +32,12 @@ estudiantes_por_materia(Materia, Nombre):-
     cursa(IdEstudiante, IdMateria),
     estudiante(IdEstudiante, Nombre).
 
+
+%
+creditos_por_estudiante(Nombre, TotalCreditos):-
+    estudiante(IdEstudiante, Nombre),
+    findall(Creditos, 
+            (cursa(IdEstudiante, IdMateria), 
+             materia(IdMateria, _, Creditos)), 
+            CreditosLista),
+    sumlist(CreditosLista, TotalCreditos).

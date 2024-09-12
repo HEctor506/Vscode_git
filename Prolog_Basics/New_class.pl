@@ -26,9 +26,6 @@ tiene(juan, bici).
 has(john, car).
 has(john, bike).
 
-horizontal(seg(punto(X,Y),
-        punto(X1,Y))).
-
 
 
 
