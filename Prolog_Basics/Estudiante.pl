@@ -15,6 +15,7 @@ materia(1, 'Matematicas', 4).
 materia(2, 'Historia', 3).
 materia(3, 'Programacion', 5).
 
+
 % Asignaciones de materias a estudiantes
 cursa(1, 1).  % Juan cursa Matemáticas
 cursa(1, 2).  % Juan cursa Historia
@@ -26,6 +27,7 @@ materias_por_estudiante(Nombre, Materia):-
     cursa(IdEstudiante, IdMateria),
     materia(IdMateria, Materia, _).
 
+
 % Consultar estudiantes por materia
 estudiantes_por_materia(Materia, Nombre):-
     materia(IdMateria, Materia, _),
@@ -33,7 +35,6 @@ estudiantes_por_materia(Materia, Nombre):-
     estudiante(IdEstudiante, Nombre).
 
 
-%
 creditos_por_estudiante(Nombre, TotalCreditos):-
     estudiante(IdEstudiante, Nombre),
     findall(Creditos, 
